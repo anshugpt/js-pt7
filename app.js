@@ -120,9 +120,71 @@ const students = { //* students scope -> globle scope
 // function that print "hello world" five times at interval of 2s
 
 function printHello(){
-    
-        
-    
-    } 
+   let id = setInterval(() => {
+        console.log("hello world");
+    }, 2000);
+    setInterval(() => {
+        clearInterval(id);
+    }, 10000);
+} 
 
-printHello();
+// printHello();
+
+// function that give square of n
+
+const sq = (n) => n**2;
+
+//* Assignment Question
+
+// Qs-1
+
+
+const arrayAverage = (arr) => {
+    let sum = 0
+    for(let i=0; i<arr.length; i++){
+        sum += arr[i]
+    }
+    return sum/arr.length ;
+}
+
+// let inArr = [4, 5, 6]
+// console.log(arrayAverage(inArr));
+
+//Qs-2
+
+const isEven = (n) => {
+    if (n%2 == 0){
+        return ("It's Even!");
+    } else {
+        return ("It's not Even!");
+    }
+}
+
+// console.log(isEven(1034));
+
+//Qs-3
+
+const  object = {
+    message: "hello, world",
+    logMessage(){
+        console.log(this.message);   
+    }
+}
+// setTimeout(object.logMessage, 1000); //* the output will be undefined because logMessage is a function
+
+
+//Qs-4
+
+let length = 4
+function callback(){
+    console.log(this.length); //* this.length is a inbuilt function
+}
+
+const object1 = {
+    length: 5,
+    method(callback){
+        callback(); 
+    }
+};
+
+object1.method(callback); //*-> output -> 0 this.length is a inbuilt func
