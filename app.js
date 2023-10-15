@@ -35,3 +35,20 @@ const student = {
 // by this we can run all the code while getting error
 // we can see error in catch statement -> catch(err){ console.log(err);}
 // this will show which error we got in try!
+
+//* Miscellaneous Topic
+
+//* Arrow Function :-
+// it's a short way to write function
+// used for callback for higher order function
+// it's not stand alone function
+// used as passing parameter to high order function
+
+const sum = (a, b) => {
+    return a + b;
+};
+
+//* ==> Implicit return in arrow function :-
+// if arrow function only return a single value then we use implicit return
+
+const mult = (a, b) => a * b;
