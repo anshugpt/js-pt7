@@ -85,3 +85,44 @@ let id = setInterval(() => {
 }, 2000);
 
 clearInterval(id); //* using that method we need to stop that
+
+
+//* This with arrow function :-
+// This keyword is very tricky
+// for function -> scope for This is calling it's object
+// for arrow -> it's work as lexical scope -> the scope of parent is scope of this keyword in arrow function
+
+const students = { //* students scope -> globle scope
+    name: "Ajali",
+    marks: 99,
+    prop: this, //* globle scope
+    getName: function(){
+        console.log(this); //* for students object
+        return this.name; //* scope -> students object
+    },
+    getMark: () => {
+        console.log(this); //* for window object
+        return this.marks; //* parent's scope which is globle scope
+    },
+    getInfo1: function (){
+        setTimeout(() => {
+            console.log(this); //* parent's scope -> function -> student's object
+        }, 2000);
+    },
+    getInfo2: function (){
+        setTimeout(function(){
+            console.log(this); //* call by setTimeout which is window's object function -> default -> window's object
+        }, 2000);
+    }
+};
+
+//* Practice Qs
+// function that print "hello world" five times at interval of 2s
+
+function printHello(){
+    
+        
+    
+    } 
+
+printHello();
