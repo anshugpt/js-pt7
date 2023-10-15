@@ -52,3 +52,36 @@ const sum = (a, b) => {
 // if arrow function only return a single value then we use implicit return
 
 const mult = (a, b) => a * b;
+
+
+//* Set Timeout :-
+// use to set timer in which our will have to done
+// inbuilt function of window object
+// Syntax => setTimeout(function, timeout)
+// Timeout argument will be in milli second -> 1s = 1000ms
+// code will keep running it will not wait for timeout
+
+// console.log("hi, there");
+
+// setTimeout(() => {
+//     console.log("Anshu"); //* Print it in 4s
+// }, 4000);
+
+// console.log("I'm"); //* print before "Anshu"
+
+//* Set Interval :-
+// it will run the code multiple times in the given timeout
+// syntax -> setInterval(function, timeout)
+// timeout will be in ms
+
+// setInterval(() => {
+//     console.log("Anshu"); //* keep printing after 2000ms
+// }, 2000);
+
+// if we want to stop that then we need to assine an id to it
+
+let id = setInterval(() => {
+    console.log("hi");
+}, 2000);
+
+clearInterval(id); //* using that method we need to stop that
